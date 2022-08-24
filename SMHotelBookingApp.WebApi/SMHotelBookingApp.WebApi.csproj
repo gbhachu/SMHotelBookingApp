@@ -7,7 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SMHotelBookingApp.Application\SMHotelBookingApp.Application.csproj" />
+    <ProjectReference Include="..\SMHotelBookingApp.Data_EF\SMHotelBookingApp.Data_EF.csproj" />
+    <ProjectReference Include="..\SMHotelBookingApp.Domain\SMHotelBookingApp.Domain.csproj" />
+    <ProjectReference Include="..\SMHotelBookingApp.UnitTests\SMHotelBookingApp.UnitTests.csproj" />
   </ItemGroup>
 
 </Project>
