@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMHotelBookingApp.Data_EF",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMHotelBookingApp.Application", "SMHotelBookingApp.Application\SMHotelBookingApp.Application.csproj", "{0F89FC61-7F0A-4929-A6FE-72988FEC8CA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMHotelBookingApp.UnitTests", "SMHotelBookingApp.UnitTests\SMHotelBookingApp.UnitTests.csproj", "{C1969428-1738-4CF6-B4AF-09804521A66F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMHotelBookingApp.UnitTests", "SMHotelBookingApp.UnitTests\SMHotelBookingApp.UnitTests.csproj", "{307242AB-7067-4474-83E5-2591680B39AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{0F89FC61-7F0A-4929-A6FE-72988FEC8CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F89FC61-7F0A-4929-A6FE-72988FEC8CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F89FC61-7F0A-4929-A6FE-72988FEC8CA3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1969428-1738-4CF6-B4AF-09804521A66F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1969428-1738-4CF6-B4AF-09804521A66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1969428-1738-4CF6-B4AF-09804521A66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1969428-1738-4CF6-B4AF-09804521A66F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{307242AB-7067-4474-83E5-2591680B39AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{307242AB-7067-4474-83E5-2591680B39AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{307242AB-7067-4474-83E5-2591680B39AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{307242AB-7067-4474-83E5-2591680B39AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

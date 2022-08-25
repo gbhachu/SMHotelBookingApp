@@ -20,7 +20,6 @@
     <ProjectReference Include="..\SMHotelBookingApp.Application\SMHotelBookingApp.Application.csproj" />
     <ProjectReference Include="..\SMHotelBookingApp.Data_EF\SMHotelBookingApp.Data_EF.csproj" />
     <ProjectReference Include="..\SMHotelBookingApp.Domain\SMHotelBookingApp.Domain.csproj" />
-    <ProjectReference Include="..\SMHotelBookingApp.UnitTests\SMHotelBookingApp.UnitTests.csproj" />
   </ItemGroup>
 
 </Project>
