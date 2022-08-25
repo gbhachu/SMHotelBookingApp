@@ -1,6 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using SMHotelBookingApp.Application.ApplicationServices;
+using SMHotelBookingApp.Application.Interfaces;
 using SMHotelBookingApp.Data_EF.Context;
+using SMHotelBookingApp.Data_EF.TypeRepository;
+using SMHotelBookingApp.Data_EF.UnitOfWork;
+using SMHotelBookingApp.Domain.DomainModels;
+using SMHotelBookingApp.Domain.Interfaces;
 
 namespace SMHotelBookingApp.WebApi
 {
@@ -14,7 +20,14 @@ namespace SMHotelBookingApp.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<SMHotelBookingContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));           
+            services.AddDbContext<SMHotelBookingContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default")));
+
+            services.AddTransient<IGenericRepository<Booking>, GenericRepository<Booking>>();
+            services.AddTransient<IGenericRepository<Room>, GenericRepository<Room>>();
+
+            services.AddTransient<IBookingApplicationService, BookingApplicationService>();
+            services.AddTransient<IBookingRepository, BookingRepository>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
         }
 
