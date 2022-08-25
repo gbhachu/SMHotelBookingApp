@@ -6,8 +6,12 @@ namespace SMHotelBookingApp.UnitTests.Moqs;
 
 public class MoqBookingRepository : IGenericRepository<Booking>
 {
-    private DateTime fullyOccupiedStartDate;
-    private DateTime fullyOccupiedEndDate;
+    private readonly DateTime fullyOccupiedStartDate;
+    private readonly DateTime fullyOccupiedEndDate;
+
+    public bool addWasCalled = false;
+    public bool editWasCalled = false;
+    public bool removeWasCalled = false;
 
     public MoqBookingRepository(DateTime start, DateTime end)
     {
@@ -15,13 +19,13 @@ public class MoqBookingRepository : IGenericRepository<Booking>
         fullyOccupiedEndDate = end;
     }
 
-    public bool addWasCalled = false;
+    
     public void Add(Booking entity)
     {
         addWasCalled = true;
     }
 
-    public bool editWasCalled = false;
+    
     public void Edit(Booking entity)
     {
         editWasCalled = true;
@@ -52,7 +56,7 @@ public class MoqBookingRepository : IGenericRepository<Booking>
         return new Booking { Id = 1, StartDate = fullyOccupiedStartDate, EndDate = fullyOccupiedEndDate, IsActive = true, CustomerId = 1, RoomId = 1 };
     }
 
-    public bool removeWasCalled = false;
+    
     public void Remove(Booking entity)
     {
         removeWasCalled = true;
