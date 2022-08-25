@@ -12,6 +12,8 @@ namespace SMHotelBookingApp.Application.Dtos
                 StartDate = dto.StartDate,
                 EndDate = dto.EndDate,
                 IsActive = dto.IsActive,
+                CustomerId = dto.CustomerId,
+                RoomId = dto.RoomId,
                 Customer = dto.Customer,
                 Room = dto.Room
             };

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SMHotelBookingApp.Application.ApplicationServices;
 using SMHotelBookingApp.Application.Interfaces;
 using SMHotelBookingApp.Data_EF.Context;
+using SMHotelBookingApp.Data_EF.Interfaces;
 using SMHotelBookingApp.Data_EF.TypeRepository;
 using SMHotelBookingApp.Data_EF.UnitOfWork;
 using SMHotelBookingApp.Domain.DomainModels;
@@ -28,14 +29,29 @@ namespace SMHotelBookingApp.WebApi
             services.AddTransient<IBookingApplicationService, BookingApplicationService>();
             services.AddTransient<IBookingRepository, BookingRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-
+            services.AddTransient<IDbInitializer, DbInitializer>();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+
+                // Initialize the database.
+                using (var scope = app.ApplicationServices.CreateScope())
+                {
+                    var services = scope.ServiceProvider;
+                    var dbContext = services.GetService<SMHotelBookingContext>();
+                    var dbInitializer = services.GetService<IDbInitializer>();
+                    dbInitializer.Initialize(dbContext);
+                }
+            }
             app.UseRouting();
             app.UseEndpoints(x => x.MapControllers());
         }
+
+
     }
 }
+

@@ -9,19 +9,10 @@ public class BookingDto
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public bool IsActive { get; set; }
+    public int CustomerId { get; set; }
+    public int RoomId { get; set; }
     public virtual Customer Customer { get; set; }
     public virtual Room Room { get; set; }
 
-    public static Booking DtoToDomain(BookingDto dto)
-    {
-        return new Booking
-        {
-            BookingReference = dto.BookingReference,
-            StartDate = dto.StartDate,
-            EndDate = dto.EndDate,
-            IsActive = dto.IsActive,
-            Customer = dto.Customer,
-            Room = dto.Room
-        };
-    }
+    
 }

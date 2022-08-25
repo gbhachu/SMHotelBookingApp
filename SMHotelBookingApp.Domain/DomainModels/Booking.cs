@@ -13,8 +13,12 @@ public class Booking
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public bool IsActive { get; set; }
+    public int CustomerId { get; set; }
+    public int RoomId { get; set; }
     [Required]
     public virtual Customer Customer { get; set; }
     [Required]
     public virtual Room Room { get; set; }
+
+    
 }

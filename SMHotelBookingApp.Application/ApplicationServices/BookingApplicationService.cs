@@ -38,7 +38,7 @@ public class BookingApplicationService : IBookingApplicationService
         var activeBookings = _bookingRepository.GetAll().Where(b => b.IsActive);
         foreach (var room in _roomRepository.GetAll())
         {
-            var activeBookingsForCurrentRoom = activeBookings.Where(b => b.Room.Id == room.Id);
+            var activeBookingsForCurrentRoom = activeBookings.Where(b => b.RoomId == room.Id);
             if (activeBookingsForCurrentRoom.All(b => startDate < b.StartDate &&
                 endDate < b.StartDate || startDate > b.EndDate && endDate > b.EndDate))
             {
